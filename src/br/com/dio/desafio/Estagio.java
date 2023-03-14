@@ -1,20 +1,16 @@
 package br.com.dio.desafio;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
-public class Bootcamp {
+public class Estagio {
 
     private String nome;
     private String descricao;
     private final LocalDate dataInicial = LocalDate.now();
-    private final LocalDate dataFinal = dataInicial.plusDays(45);
-    private Set<Dev> devsInscritos = new  HashSet<>();
+    private final LocalDate dataFinal = dataInicial.plusDays(115);
+    private Set<Aluno> devsInscritos = new  HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
-
 
     public String getNome() {
         return nome;
@@ -40,11 +36,11 @@ public class Bootcamp {
         return dataFinal;
     }
 
-    public Set<Dev> getDevsInscritos() {
+    public Set<Aluno> getDevsInscritos() {
         return devsInscritos;
     }
 
-    public void setDevsInscritos(Set<Dev> devsInscritos) {
+    public void setDevsInscritos(Set<Aluno> devsInscritos) {
         this.devsInscritos = devsInscritos;
     }
 
@@ -60,12 +56,13 @@ public class Bootcamp {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Bootcamp bootcamp = (Bootcamp) o;
-        return Objects.equals(nome, bootcamp.nome) && Objects.equals(descricao, bootcamp.descricao) && Objects.equals(dataInicial, bootcamp.dataInicial) && Objects.equals(dataFinal, bootcamp.dataFinal) && Objects.equals(devsInscritos, bootcamp.devsInscritos) && Objects.equals(conteudos, bootcamp.conteudos);
+        Estagio estagio = (Estagio) o;
+        return Objects.equals(nome, estagio.nome) && Objects.equals(descricao, estagio.descricao) && Objects.equals(dataInicial, estagio.dataInicial) && Objects.equals(dataFinal, estagio.dataFinal) && Objects.equals(devsInscritos, estagio.devsInscritos) && Objects.equals(conteudos, estagio.conteudos);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(nome, descricao, dataInicial, dataFinal, devsInscritos, conteudos);
     }
+
 }

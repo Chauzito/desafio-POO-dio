@@ -5,14 +5,14 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 
-public class Dev {
+public class Aluno {
     private String nome;
     private Set<Conteudo> conteudosIncritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
-    public void inscreverBootcamp(Bootcamp bootcamp){
-        this.conteudosIncritos.addAll(bootcamp.getConteudos());
-        bootcamp.getDevsInscritos().add(this);
+    public void increverAluno(Estagio estagio){
+        this.conteudosIncritos.addAll(estagio.getConteudos());
+        estagio.getDevsInscritos().add(this);
     }
 
     public void progredir() {
@@ -57,12 +57,12 @@ public class Dev {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Dev dev = (Dev) o;
-        return Objects.equals(nome, dev.nome) && Objects.equals(conteudosIncritos, dev.conteudosIncritos) && Objects.equals(conteudosConcluidos, dev.conteudosConcluidos);
+        Aluno aluno = (Aluno) o;
+        return Objects.equals(nome, aluno.nome) && Objects.equals(conteudosIncritos, aluno.conteudosIncritos) && Objects.equals(conteudosConcluidos, aluno.conteudosConcluidos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, conteudosIncritos, conteudosConcluidos);
+        return Objects.hash(nome + conteudosIncritos + conteudosConcluidos);
     }
 }

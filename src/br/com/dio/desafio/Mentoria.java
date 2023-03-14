@@ -7,7 +7,7 @@ public class Mentoria extends Conteudo {
 
    @Override
    public double calcularXp() {
-      return XP_PADRAO + 20d;
+      return XP_PADRAO + 90d;
    }
 
    public Mentoria() {
@@ -23,10 +23,9 @@ public class Mentoria extends Conteudo {
 
    @Override
    public String toString() {
-      return "Mentoria{" +
-              "título='" + getTitulo() + '\'' +
-              ", descricao='" + getDescricao() + '\'' +
-              ", data=" + data +
-              '}';
+      return "Mentorias:" +
+              " Título referente aos " + getTitulo() +
+              ". Descrição: " + getDescricao() +
+              ". Data: " + data;
    }
 }
